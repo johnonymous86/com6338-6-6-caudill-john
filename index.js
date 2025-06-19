@@ -1,13 +1,17 @@
 //grab menu class and give it an open or closed option
 
-const hamburgerBtn = document.querySelector('hamburger-btn');
-const hamburgerMenu = document.querySelector('.hamburger-menu')
-const mainMenu = document.querySelector('menu')
+const hamburgerBtn = document.querySelector('button.hamburger-btn');
+const hamburgerMenu = document.querySelector('ul.hamburger-menu')
+const mainMenu = document.querySelector('nav.menu')
 
+hamburgerBtn.addEventListener('click', () =>{
+    hamburgerBtn.classList.toggle('active');
+    mainMenu.classList.toggle('active');
+});
 
 
 function showMenu() {
-    var x = document.getElementById('main-menu');
+    var x = document.getElementById('button.hamburger-btn');
     if (x.style.display = 'block') {
         x.style.display = 'none';
     } else {
@@ -16,14 +20,31 @@ function showMenu() {
 }
 
 
-hamburgerMenu.addEventListener('click', () => {
-    hamburgerMenu.classList.toggle('show-menu');
+/*hamburgerBtn.addEventListener('click', () => {
+    const isExpanded = mainMenuToggle.getAttribute('aria-expanded') === 'true';
+
+
+    if (isExpanded) {
+        mainMenuToggle.setAttribute('aria-expanded', 'false');
+
+        mainMenu.style.display = 'none';
+    } else {
+        mainMenu.setAttribute('aria-expanded', 'true');
+
+        mainMenu.style.display = 'block';
+    }
+
+    hamburgerBtn.classList.toggle('active');
+
+    mainMenu.classList.toggle('open');
 })
 
 
 
 
 /*
+hamburgerBtn.classList.toggle('show-menu');
+
 hamburgerBtn.addEventListener('click', () => {
     const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
 
@@ -51,3 +72,5 @@ hamburgerBtn.addEventListener('click', () => {
 // hamburgerBtn.classList.toggle('active');
 
 //    mainMenu.classList.toggle('open'); 
+
+*/
