@@ -3,15 +3,16 @@
 //else if visible on click, make hidden.
 
 var button = document.querySelector('button.hamburger-btn');
-var buttonElement = document.getElementById('button');
+var menu = document.querySelector('ul.hamburger-menu li');
+
 
 
 button.onclick = function() {
 
-if(button.style.visibility = 'hidden'){
+if(menu.style.visibility = 'hidden'){
     button.setAttribute('aria-expanded', 'true')
-    button.style.visibility = 'visible'
-   } else{ button.style.visibility = 'hidden'
+    menu.style.visibility = 'visible'
+   } else{ menu.style.visibility = 'visible'
 
    }
 
