@@ -14,7 +14,9 @@ if(menu.style.visibility = 'hidden'){
     links.classList.toggle('visible');
     button.setAttribute('aria-expanded', 'true');
     menu.style.visibility = 'visible'
+    menu.style.transformation = 'block'
     links.style.visibility = 'visibile'
+
    } else{ menu.style.visibility = 'visible'
 
    }
