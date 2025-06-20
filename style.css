@@ -187,7 +187,7 @@ a:hover, a:focus {
     margin: 0;
     text-align: center;
     font-weight: 500;
-    visibility: hidden;
+    visibility: hidden; /*does this need to be visible?*/
   }
   nav ul.hamburger-menu.show-menu li {
     visibility: visible;

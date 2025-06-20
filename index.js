@@ -4,14 +4,17 @@
 
 var button = document.querySelector('button.hamburger-btn');
 var menu = document.querySelector('ul.hamburger-menu li');
+var links = document.getElementById('main-menu');
 
 
 
 button.onclick = function() {
 
 if(menu.style.visibility = 'hidden'){
-    button.setAttribute('aria-expanded', 'true')
+    links.classList.toggle('visible');
+    button.setAttribute('aria-expanded', 'true');
     menu.style.visibility = 'visible'
+    links.style.visibility = 'visibile'
    } else{ menu.style.visibility = 'visible'
 
    }
