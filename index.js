@@ -1,34 +1,87 @@
-//intention of below code: if menu is hidden on button click,
-//change style to visible on click.
-//else if visible on click, make hidden.
 
-var button = document.querySelector('button.hamburger-btn');
-var menu = document.querySelector('ul.hamburger-menu li');
+
+
+//variables
+
+var button = document.querySelector("button.hamburger-btn");
+var menu = document.getElementById("main-menu");
 var links = document.getElementById('main-menu');
+var navigation = document.getElementsByClassName("menu");
+var container = document.getElementsByClassName("hamburger-btn");
+var hamMenu = document.getElementsByClassName("hamburger-menu")
 
 
+//below sets click event to open hamburger menu
 
-button.onclick = function() {
+button.onclick = function () {
+if (menu.classList.contains("show-menu")) {
+links.classList.toggle('visible');    
+menu.setAttribute("aria-expanded", "true");
+menu.classList.remove('show-menu');
+links.style.visibility = ('visible');
+button.setAttribute("aria-expanded", "true");
 
-if(menu.style.visibility = 'hidden'){
-    links.classList.toggle('visible');
-    button.setAttribute('aria-expanded', 'true');
-    menu.style.visibility = 'visible'
-    menu.style.transformation = 'block'
-    links.style.visibility = 'visibile'
 
-   } else{ menu.style.visibility = 'visible'
+//below should close/open with esc button and focus hamburger and menu items
+//set aria expanded to false when collapsed
+document.onkeyup = function(e) {
+    if (e.key === 'Escape')
+        close.hamMenu()
+    if (
+    e.key === 'Tab' && 
+    menu.contains(document.activeElement)) {
+    closeBtn.focus();
+    }
+}
+} else {
+menu.classList.add('show-menu');
+menu.setAttribute("aria-expanded", "false");
+}
+};
 
-   }
-
-   console.log("click");
+//below should close menu if clicking outside menu
+menu.onclick = function(e) {
+    if (!menu.contains(e.target)) {
+        closeMenu ()
+    }
 };
 
 
+/*var navigation = document.getElementsByClassName("menu");
+document.addEventListener('click', (e) => {
+    if (!navigation.contains(e.target) && !button.contains(e.target)) {
+    navigation.classList.contains('hidden');
+    }
+}
+);
 
+
+/*keyboard navigation options
+document.onkeyup = function(e) {
+    if (e.key === 'Escape')
+        closeMenu()
+    if (
+    e.key === 'Tab' && 
+    !menu.contains(document.activeElement)) {
+closeBtn.focus()
+    }
+}
+
+menu.onclick = function(e) {
+    if (!menu.contains(e.target)) {
+        closeMenu ()
+    }
+}
 
 
 /*
+
+document.addEventListener('click', (e) => {
+    if (!menu.contains(e.target) && !button.contains(e.target)) {
+    menu.classList.contains('hidden');
+    }
+}
+);
 Nothing below here has worked thus far
 
 var hamburgerBtn = document.querySelector('button.hambuger-btn')
